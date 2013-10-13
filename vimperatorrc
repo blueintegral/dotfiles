@@ -1,0 +1,8 @@
+"3.5 (created: 2012/08/04 00:41:20)
+
+" Hit backslash-t to unhighlight search term matches
+map \\t :nohlsearch<CR>
+
+" Use emacsclient as our external editor
+set editor=emacsclient
+
