@@ -26,6 +26,41 @@ set dir=~/.vim/swap//,/var/tmp//,/tmp//,.
 execute pathogen#infect()
 filetype plugin indent on
 
+
+set ts=4
+set shiftwidth=4
+set noexpandtab		" spaces suck, use tabs
+set ai				" auto-indent
+
+filetype indent on	" filetype-specific indenting
+filetype plugin on	" filetype-specific plugins
+
+" scons
+autocmd BufReadPre,BufNewFile SConstruct set filetype=python
+autocmd BufReadPre,BufNewFile SConscript set filetype=python
+
+set ignorecase		" case-insensitive search
+set incsearch		" when searching, highlight as you type
+
+" prevent 'cheating'
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
+" sublime
+au BufNewFile,BufRead *.sublime-settings set filetype=json
+au BufNewFile,BufRead *.sublime-project set filetype=json
+
+" JSON
+let g:vim_json_syntax_conceal = 0
+
+noremap :bb ddk$
+
+
+
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""                                                                 ""
@@ -49,6 +84,11 @@ set numberwidth=3
 if exists("+relativenumber")
     set relativenumber
 endif
+set ruler			" show line number in bottom bar
+
+syntax enable
+set background=dark
+colorscheme solarized
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
